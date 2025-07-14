@@ -1,0 +1,40 @@
+﻿@model LavacarSeLoChaneoADomicilio.Models.Empleado
+
+@{
+	ViewData["Title"] = "Agregar Empleado";
+}
+
+<h2>Agregar Empleado</h2>
+
+<form asp-action="Create" method="post">
+	<div class="mb-3">
+		<label>Cédula</label>
+		<input asp-for="Cedula" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Fecha de Nacimiento</label>
+		<input asp-for="FechaNacimiento" type="date" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Fecha de Ingreso</label>
+		<input asp-for="FechaIngreso" type="date" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Salario por Día</label>
+		<input asp-for="SalarioPorDia" type="number" step="0.01" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Días Vacaciones Acumulados</label>
+		<input asp-for="DiasVacacionesAcumulados" type="number" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Fecha de Retiro</label>
+		<input asp-for="FechaRetiro" type="date" class="form-control" />
+	</div>
+	<div class="mb-3">
+		<label>Monto de Liquidación</label>
+		<input asp-for="MontoLiquidacion" type="number" step="0.01" class="form-control" />
+	</div>
+	<button type="submit" class="btn btn-success">Guardar</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

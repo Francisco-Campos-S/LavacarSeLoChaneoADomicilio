@@ -1,0 +1,52 @@
+﻿@model List<LavacarSeLoChaneoADomicilio.Models.Empleado>
+
+@{
+	ViewData["Title"] = "Empleados";
+}
+
+<h2>Empleados</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Agregar Empleado</a>
+<form asp-action="Index" method="get" class="mb-3 row g-2 justify-content-end">
+	<div class="col-auto">
+		<input type="text" name="busqueda" class="form-control" placeholder="Buscar empleado..."
+			   value="@ViewBag.Busqueda" />
+	</div>
+	<div class="col-auto">
+		<button type="submit" class="btn btn-outline-secondary">Buscar</button>
+	</div>
+</form>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Cédula</th>
+			<th>F. Nacimiento</th>
+			<th>F. Ingreso</th>
+			<th>Salario por Día</th>
+			<th>Vacaciones</th>
+			<th>F. Retiro</th>
+			<th>Liquidación</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var emp in Model)
+		{
+			<tr>
+				<td>@emp.Cedula</td>
+				<td>@emp.FechaNacimiento.ToShortDateString()</td>
+				<td>@emp.FechaIngreso.ToShortDateString()</td>
+				<td>@emp.SalarioPorDia.ToString("C")</td>
+				<td>@emp.DiasVacacionesAcumulados</td>
+				<td>@(emp.FechaRetiro?.ToShortDateString() ?? "-")</td>
+				<td>@emp.MontoLiquidacion.ToString("C")</td>
+				<td>
+					<a class="btn btn-info btn-sm" asp-action="Details" asp-route-cedula="@emp.Cedula">Ver</a>
+					<a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-cedula="@emp.Cedula">Editar</a>
+					<a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-cedula="@emp.Cedula">Eliminar</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

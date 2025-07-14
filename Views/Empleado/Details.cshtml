@@ -1,0 +1,41 @@
+﻿@model LavacarSeLoChaneoADomicilio.Models.Empleado
+
+@{
+	ViewData["Title"] = "Detalles del Empleado";
+}
+
+<h2>Detalles del Empleado</h2>
+
+<table class="table table-bordered">
+	<tr>
+		<th>Cédula</th>
+		<td>@Model.Cedula</td>
+	</tr>
+	<tr>
+		<th>Fecha de Nacimiento</th>
+		<td>@Model.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+	</tr>
+	<tr>
+		<th>Fecha de Ingreso</th>
+		<td>@Model.FechaIngreso.ToString("dd/MM/yyyy")</td>
+	</tr>
+	<tr>
+		<th>Salario por Día</th>
+		<td>@Model.SalarioPorDia.ToString("C")</td>
+	</tr>
+	<tr>
+		<th>Días de Vacaciones Acumulados</th>
+		<td>@Model.DiasVacacionesAcumulados</td>
+	</tr>
+	<tr>
+		<th>Fecha de Retiro</th>
+		<td>@(Model.FechaRetiro?.ToString("dd/MM/yyyy") ?? "N/A")</td>
+	</tr>
+	<tr>
+		<th>Monto de Liquidación</th>
+		<td>@Model.MontoLiquidacion.ToString("C")</td>
+	</tr>
+</table>
+
+<a asp-action="Edit" asp-route-cedula="@Model.Cedula" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

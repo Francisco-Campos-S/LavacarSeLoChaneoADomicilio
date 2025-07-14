@@ -1,0 +1,33 @@
+﻿@{
+	ViewData["Title"] = "Inicio";
+}
+
+<div class="container text-center mt-5">
+	<h1 class="display-4 mb-4">Bienvenido a <strong>Se lo Chaneo a Domicilio</strong></h1>
+	<p class="lead mb-4">Sistema interno de gestión para empleados, vehículos, clientes y lavados de autos a domicilio.</p>
+
+	<img src="~/images/lavacar.jpg" class="img-fluid rounded shadow-sm mb-5" style="max-height: 300px;" alt="lavacar" />
+
+	<div class="row justify-content-center">
+		<div class="col-md-3 mb-4">
+			<a class="btn btn-outline-primary w-100 py-3" asp-controller="Empleado" asp-action="Index">
+				👷 Empleados
+			</a>
+		</div>
+		<div class="col-md-3 mb-4">
+			<a class="btn btn-outline-success w-100 py-3" asp-controller="Vehiculo" asp-action="Index">
+				🚗 Vehículos
+			</a>
+		</div>
+		<div class="col-md-3 mb-4">
+			<a class="btn btn-outline-info w-100 py-3" asp-controller="Cliente" asp-action="Index">
+				👤 Clientes
+			</a>
+		</div>
+		<div class="col-md-3 mb-4">
+			<a class="btn btn-outline-warning w-100 py-3" asp-controller="Lavado" asp-action="Index">
+				💧 Lavados
+			</a>
+		</div>
+	</div>
+</div>

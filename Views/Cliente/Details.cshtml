@@ -1,0 +1,21 @@
+﻿@model LavacarSeLoChaneoADomicilio.Models.Cliente
+
+@{
+	ViewData["Title"] = "Detalles del Cliente";
+}
+
+<h2>Detalles del Cliente</h2>
+
+<table class="table table-bordered">
+	<tr><th>Identificación</th><td>@Model.Identificacion</td></tr>
+	<tr><th>Nombre</th><td>@Model.NombreCompleto</td></tr>
+	<tr><th>Provincia</th><td>@Model.Provincia</td></tr>
+	<tr><th>Cantón</th><td>@Model.Canton</td></tr>
+	<tr><th>Distrito</th><td>@Model.Distrito</td></tr>
+	<tr><th>Dirección</th><td>@Model.DireccionExacta</td></tr>
+	<tr><th>Teléfono</th><td>@Model.Telefono</td></tr>
+	<tr><th>Preferencia de Lavado</th><td>@Model.PreferenciaLavado</td></tr>
+</table>
+
+<a asp-action="Edit" asp-route-identificacion="@Model.Identificacion" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

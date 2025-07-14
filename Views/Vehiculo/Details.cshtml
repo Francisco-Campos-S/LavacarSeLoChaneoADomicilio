@@ -1,0 +1,20 @@
+﻿@model LavacarSeLoChaneoADomicilio.Models.Vehiculo
+
+@{
+	ViewData["Title"] = "Detalles del Vehículo";
+}
+
+<h2>Detalles del Vehículo</h2>
+
+<table class="table table-bordered">
+	<tr><th>Placa</th><td>@Model.Placa</td></tr>
+	<tr><th>Marca</th><td>@Model.Marca</td></tr>
+	<tr><th>Modelo</th><td>@Model.Modelo</td></tr>
+	<tr><th>Tracción</th><td>@Model.Traccion</td></tr>
+	<tr><th>Color</th><td>@Model.Color</td></tr>
+	<tr><th>Última Fecha Atención</th><td>@(Model.UltimaFechaAtencion?.ToString("dd/MM/yyyy") ?? "N/A")</td></tr>
+	<tr><th>Tratamiento NanoCerámico</th><td>@(Model.TratamientoNanoCeramico ? "Sí" : "No")</td></tr>
+</table>
+
+<a asp-action="Edit" asp-route-placa="@Model.Placa" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

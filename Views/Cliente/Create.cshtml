@@ -1,0 +1,50 @@
+﻿@model LavacarSeLoChaneoADomicilio.Models.Cliente
+
+@{
+	ViewData["Title"] = "Agregar Cliente";
+}
+
+<h2>Agregar Cliente</h2>
+
+<form asp-action="Create" method="post">
+	<div class="mb-3">
+		<label>Identificación</label>
+		<input asp-for="Identificacion" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Nombre Completo</label>
+		<input asp-for="NombreCompleto" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Provincia</label>
+		<input asp-for="Provincia" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Cantón</label>
+		<input asp-for="Canton" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Distrito</label>
+		<input asp-for="Distrito" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Dirección Exacta</label>
+		<textarea asp-for="DireccionExacta" class="form-control" rows="2" required></textarea>
+	</div>
+	<div class="mb-3">
+		<label>Teléfono</label>
+		<input asp-for="Telefono" class="form-control" required />
+	</div>
+	<div class="mb-3">
+		<label>Preferencia de Lavado</label>
+		<select asp-for="PreferenciaLavado" class="form-select" required>
+			<option value="">-- Seleccione --</option>
+			<option>Semanal</option>
+			<option>Quincenal</option>
+			<option>Mensual</option>
+			<option>Otro</option>
+		</select>
+	</div>
+	<button type="submit" class="btn btn-success">Guardar</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
